@@ -8,6 +8,46 @@
     <title>Document</title>
 </head>
 <body>
+    <script>
+        function showHealth(){
+            document.getElementById('description-health').style.display = "block";
+        }
+        function closeHealth(){
+            document.getElementById('description-health').style.display = "none";
+        }
+        function showProductivity(){
+            document.getElementById('description-productivity').style.display = "block";
+        }
+        function closeProductivity(){
+            document.getElementById('description-productivity').style.display = "none";
+        }
+    </script>
+    <div class="description-health" id="description-health">
+        <div class="modal--close" onclick="closeHealth()">
+            X
+        </div>
+       <h1>General health risk assessment scale</h1> 
+        <p>Score of Health effects outcomes.</p>    
+        <p> 0 < Index <1. Performance preservation. Human / employee performance is not compromised by  environmental factors.</p>
+        <p>1 <= Index <3. Risk of performance impairment (presenteeism) due to indoor environment factors, 
+            there is a risk of reduced employee performance / productivity.</p>
+        <p>3 <= Index <5. Risk of short-term labour incapacity 2-3 days. Due to indoor environment factors,
+             there is a risk of short disability, which will recover within 1-3 days. During this period, 
+             the employee cannot perform his duties and be absent from work to restore his ability to work</p>
+        <p>5 <= Index <7. Risk of medium -term labour incapacity (more than 5 days).</p>
+        <p>7 <= Index <9. Risk of admission. Due to indoor environment there is a risk of admission, 
+            a health condition  that requires a person to be hospitalized for hospital care</p>
+        <p>Index >=9+. Risk of professional labour disability. Occupational 
+            disability risk means that the person will be unable to continue their professional activities.</p>
+    </div>
+    <div class="description-productivity" id="description-productivity">
+        <div class="modal--close" onclick="closeProductivity()">
+            X
+        </div>
+        <p>Productivity value is measured as a percentage.
+            For example, 95 means a potential loss of productivity - 5%</p>    
+    </div>
+
     <div class="App">
       
         <div class="nav">
@@ -16,7 +56,7 @@
           </div>
             <div class="div-link">
               <a href="#rva-indoor"><span class="POST">POST</span>/rva-indoor</a>
-              <a href="#rva-outdoor"><span class="POST">POST</span>/rva-outdoor</a>
+              <!-- <a href="#rva-outdoor"><span class="POST">POST</span>/rva-outdoor</a> -->
               <a href="#cvs-indoor"><span class="POST">POST</span>/cvs-indoor</a>
               <a href="#allergy"><span class="POST">POST</span>/allergy</a>
               <a href="#brain"><span class="POST">POST</span>/brain</a>
@@ -85,7 +125,7 @@
                     </div>
               </div>
               <div class="response">
-                <p>Response example</p>
+                <p>Response example <span  class="active-link" onclick="showHealth()">description</span></p>
                 <div class="link" id="rva-indoor-ex">
                       &#91;
                      <br />
@@ -98,7 +138,7 @@
               </div>
             </div>
             
-            <div class="content">
+            <!-- <div class="content">
               <span class="POST" id="rva-outdoor">POST</span>/rva-outdoor
               <div class="table">
                   <div class="name">
@@ -166,7 +206,7 @@
                      &#93;
                     </div>
               </div>
-            </div>
+            </div> -->
   
             <div class="content">
               <h1 id="cvs-indoor">Cardiovascular risk</h1>
@@ -226,7 +266,7 @@
                     </div>
               </div>
               <div class="response">
-                <p>Response example</p>
+                <p>Response example <span  class="active-link" onclick="showHealth()">description</span></p>
                 <div class="link" id="rva-indoor-ex">
                      &#91;
                      <br />
@@ -273,8 +313,8 @@
                     <span>Dust particles less than 2.5 μm in diameter in ppm</span>
                     <span>Dust particles less than 10 μm in diameter in ppm</span>
                     <span>Humidity value in %(0-100)</span>
-                    <span>Formaldehyde</span>
-                    <span>Ozone</span>
+                    <span>Formaldehyde value in ppb</span>
+                    <span>Ozone value in ppm</span>
                     <span>Date/time in any format</span>
                     <span>Latitude coordinates at geographic coordinate system</span>
                     <span>Longitude coordinates at geographic coordinate system</span>
@@ -300,7 +340,7 @@
                     </div>
               </div>
               <div class="response">
-                <p>Response example</p>
+                <p>Response example <span  class="active-link" onclick="showHealth()">description</span></p>
                 <div class="link" id="rva-indoor-ex">
                      &#91;
                      <br />
@@ -344,8 +384,8 @@
                     <hr></hr>
                     <span>Dust particles less than 2.5 μm in diameter in ppm</span>
                     <span>Dust particles less than 10 μm in diameter in ppm</span>
-                    <span>Formaldehyde</span>
-                    <span>Ozone</span>
+                    <span>Formaldehyde value in ppb</span>
+                    <span>Ozone value in ppm</span>
                     <span>Date/time in any format</span>
                     <span>Latitude coordinates at geographic coordinate system</span>
                     <span>Longitude coordinates at geographic coordinate system</span>
@@ -371,7 +411,7 @@
                     </div>
               </div>
               <div class="response">
-                <p>Response example</p>
+                <p>Response example <span  class="active-link" onclick="showHealth()">description</span></p>
                 <div class="link" id="brain-ex">
                      &#91;
                      <br />
@@ -419,7 +459,7 @@
                     <span>Dust particles less than 10 μm in diameter in ppm</span>
                     <span>Carbon dioxide value in ppm</span>
                     <span>Noise value in dB</span>
-                    <span>Light</span>
+                    <span>Light value in Lux</span>
                     <span>Date/time in any format</span>
                     <span>Latitude coordinates at geographic coordinate system</span>
                     <span>Longitude coordinates at geographic coordinate system</span>
@@ -445,7 +485,7 @@
                     </div>
               </div>
               <div class="response">
-                <p>Response example</p>
+                <p>Response example <span  class="active-link" onclick="showHealth()">description</span></p>
                 <div class="link" id="mental-ex">
                      &#91;
                      <br />
@@ -495,8 +535,8 @@
                     <span>Dust particles less than 10 μm in diameter in ppm</span>
                     <span>Carbon dioxide value in ppm</span>
                     <span>Humidity value in %(0-100)</span>
-                    <span>Ozone</span>
-                    <span>Formaldehyde</span>
+                    <span>Ozone value in ppm</span>
+                    <span>Formaldehyde value in ppb</span>
                     <span>Date/time in any format</span>
                     <span>Latitude coordinates at geographic coordinate system</span>
                     <span>Longitude coordinates at geographic coordinate system</span>
@@ -522,7 +562,7 @@
                     </div>
               </div>
               <div class="response">
-                <p>Response example</p>
+                <p>Response example <span  class="active-link" onclick="showHealth()">description</span></p>
                 <div class="link" id="respiratory-ex">
                      &#91;
                      <br />
@@ -559,7 +599,7 @@
                   <div class="description">
                     <h1>Description</h1>
                     <hr></hr>
-                    <span>Formaldehyde</span>
+                    <span>Formaldehyde value in ppb</span>
                     <span>Date/time in any format</span>
                     <span>Latitude coordinates at geographic coordinate system</span>
                     <span>Longitude coordinates at geographic coordinate system</span>
@@ -585,7 +625,7 @@
                     </div>
               </div>
               <div class="response">
-                <p>Response example</p>
+                <p>Response example <span  class="active-link" onclick="showHealth()">description</span></p>
                 <div class="link" id="sensorial-ex">
                      &#91;
                      <br />
@@ -654,7 +694,7 @@
                     </div>
               </div>
               <div class="response">
-                <p>Response example</p>
+                <p>Response example <span  class="active-link" onclick="showProductivity()">description</span></p>
                 <div class="link" id="productivity-ex">
                      &#91;
                      <br />

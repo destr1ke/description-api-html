@@ -156,7 +156,41 @@ body {
     margin:0;
     padding:1% 0;
   }
-  
+
+  .description-health,.description-productivity{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 21;
+    transform: translate(-50%, -50%);
+    max-width: 850px;
+    color: black;
+    width: 100%;
+
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #ededed;
+    -webkit-box-shadow: 0 9px 18px 0 rgb(0 0 0 / 65%);
+    box-shadow: 0 9px 18px 0 rgb(0 0 0 / 65%);
+    padding: 80px 160px 60px;
+  }
+  .modal--close {
+    height: 20px;
+    width: 20px;
+    position: relative;
+    display: inline-block;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+  .active-link{
+      color:blue;
+      text-decoration: underline;
+      cursor:pointer;
+      
+  }
   /* @media (prefers-reduced-motion: no-preference) {
     .App-logo {
       animation: App-logo-spin infinite 20s linear;
